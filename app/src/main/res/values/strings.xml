@@ -13,4 +13,10 @@
     <string name="settings_bio_label">Change bio</string>
     <string name="settings_menu_change_name">Change name</string>
     <string name="settings_menu_exit">Exit profile</string>
+    <string name="cd_register_image">register_image</string>
+    <string name="register_enter_code">Enter code</string>
+    <string name="register_code_sent_to_your_phone">We\'ve sent you SMS with your registration code on your phone number</string>
+    <string name="register_code_placeholder">------</string>
+    <string name="register_your_phone_number">Your phone number</string>
+    <string name="register_toast_enter_phone">Please enter your phone number</string>
 </resources>

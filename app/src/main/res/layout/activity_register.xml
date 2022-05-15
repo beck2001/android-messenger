@@ -4,24 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.EnterPhoneNumberFragment">
+    tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/register_input_phone_number"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/registerToolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        style="@style/custom_edit_text_phone_number" />
+        style="@style/mainToolbar" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/register_btn_next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/horizontal_margin"
-        android:backgroundTint="@color/firebrick"
-        android:src="@drawable/ic_btn_next"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/registerDataContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerToolbar" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

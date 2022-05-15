@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initFunc() {
         // TODO add check for user registration later when firebase will be enabled
-        if (false) { // if user is registered in the system chats fragment will be displayed
+        if (true) { // if user is registered in the system chats fragment will be displayed
             setSupportActionBar(toolbar)
             appDrawer.create()
             replaceFragment(ChatsFragment())

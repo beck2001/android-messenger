@@ -2,4 +2,15 @@
     <string name="app_name">AndroidMessenger</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="settings_default_username">Muratbek Sharibekov</string>
+    <string name="settings_default_user_status">online</string>
+    <string name="settings_text_account">Account</string>
+    <string name="settings_default_phone_number">+77471234567</string>
+    <string name="settings_label_phone_number">Press to change phone number</string>
+    <string name="settings_default_user_login">\@muratbeck</string>
+    <string name="settings_login_label">User login</string>
+    <string name="settings_default_bio">Муратбек Шарибеков</string>
+    <string name="settings_bio_label">Change bio</string>
+    <string name="settings_menu_change_name">Change name</string>
+    <string name="settings_menu_exit">Exit profile</string>
 </resources>

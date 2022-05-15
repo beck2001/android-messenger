@@ -1,6 +1,5 @@
 package kz.iitu.androidmessenger
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -8,6 +7,8 @@ import kz.iitu.androidmessenger.activity.RegisterActivity
 import kz.iitu.androidmessenger.databinding.ActivityMainBinding
 import kz.iitu.androidmessenger.ui.fragments.ChatsFragment
 import kz.iitu.androidmessenger.ui.objects.AppDrawer
+import kz.iitu.androidmessenger.utils.replaceActivity
+import kz.iitu.androidmessenger.utils.replaceFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,12 +33,9 @@ class MainActivity : AppCompatActivity() {
         if (false) { // if user is registered in the system chats fragment will be displayed
             setSupportActionBar(toolbar)
             appDrawer.create()
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.dataContainer, ChatsFragment())
-                .commit()
+            replaceFragment(ChatsFragment())
         } else {
-            val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(intent)
+            replaceActivity(RegisterActivity())
         }
 
 

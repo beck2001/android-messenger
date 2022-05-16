@@ -7,6 +7,8 @@ import kz.iitu.androidmessenger.activity.RegisterActivity
 import kz.iitu.androidmessenger.databinding.ActivityMainBinding
 import kz.iitu.androidmessenger.ui.fragments.ChatsFragment
 import kz.iitu.androidmessenger.ui.objects.AppDrawer
+import kz.iitu.androidmessenger.utils.AUTH
+import kz.iitu.androidmessenger.utils.initFirebase
 import kz.iitu.androidmessenger.utils.replaceActivity
 import kz.iitu.androidmessenger.utils.replaceFragment
 
@@ -29,11 +31,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initFunc() {
-        // TODO add check for user registration later when firebase will be enabled
-        if (true) { // if user is registered in the system chats fragment will be displayed
+        if (AUTH.currentUser != null) { // if user is registered in the system chats fragment will be displayed
             setSupportActionBar(toolbar)
             appDrawer.create()
-            replaceFragment(ChatsFragment())
+            replaceFragment(ChatsFragment(), false)
         } else {
             replaceActivity(RegisterActivity())
         }
@@ -44,5 +45,6 @@ class MainActivity : AppCompatActivity() {
     private fun initFields() {
         toolbar = binding.mainToolbar
         appDrawer = AppDrawer(this, toolbar)
+        initFirebase()
     }
 }

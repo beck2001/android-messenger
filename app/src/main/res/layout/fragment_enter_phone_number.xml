@@ -8,10 +8,11 @@
 
     <EditText
         android:id="@+id/register_input_phone_number"
+        style="@style/custom_edit_text_phone_number"
+        android:hint="@string/register_phone_hint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        style="@style/custom_edit_text_phone_number" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/register_btn_next"

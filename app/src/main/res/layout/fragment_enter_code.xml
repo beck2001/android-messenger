@@ -47,11 +47,12 @@
     <EditText
         android:id="@+id/register_input_code"
         style="@style/custom_edit_text_phone_number"
+        android:layout_width="wrap_content"
         android:autofillHints=""
         android:gravity="center"
+        android:hint="@string/register_code_placeholder"
         android:maxLength="6"
         android:textColorHint="@color/color_custom_grey"
-        android:hint="@string/register_code_placeholder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/register_code_is_sent_text" />

@@ -3,14 +3,15 @@ package kz.iitu.androidmessenger
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
 import kz.iitu.androidmessenger.activity.RegisterActivity
 import kz.iitu.androidmessenger.databinding.ActivityMainBinding
+import kz.iitu.androidmessenger.model.User
 import kz.iitu.androidmessenger.ui.fragments.ChatsFragment
 import kz.iitu.androidmessenger.ui.objects.AppDrawer
-import kz.iitu.androidmessenger.utils.AUTH
-import kz.iitu.androidmessenger.utils.initFirebase
-import kz.iitu.androidmessenger.utils.replaceActivity
-import kz.iitu.androidmessenger.utils.replaceFragment
+import kz.iitu.androidmessenger.utils.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -46,5 +47,13 @@ class MainActivity : AppCompatActivity() {
         toolbar = binding.mainToolbar
         appDrawer = AppDrawer(this, toolbar)
         initFirebase()
+        initUser()
+    }
+
+    private fun initUser() {
+        REF_DATABASE_ROOT.child(NODE_USERS).child(UID)
+            .addListenerForSingleValueEvent(AppValueEventListener {
+                USER = it.getValue(User::class.java) ?: User()
+            })
     }
 }

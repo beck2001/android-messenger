@@ -1,7 +1,8 @@
 package kz.iitu.androidmessenger.ui.fragments
 
-import android.os.Bundle
-import android.view.*
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_change_name.*
 import kz.iitu.androidmessenger.MainActivity
@@ -13,6 +14,8 @@ class ChangeNameFragment : Fragment(R.layout.fragment_change_name) {
     override fun onResume() {
         super.onResume()
         setHasOptionsMenu(true)
+        settings_input_first_name.setText(USER.fullName.split(" ")[0])
+        settings_input_last_name.setText(USER.fullName.split(" ")[1])
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

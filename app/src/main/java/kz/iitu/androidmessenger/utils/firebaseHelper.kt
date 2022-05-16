@@ -14,5 +14,7 @@ const val CHILD_USERNAME = "username"
 
 fun initFirebase() {
     AUTH = FirebaseAuth.getInstance()
-    REF_DATABASE_ROOT = FirebaseDatabase.getInstance().reference
+    REF_DATABASE_ROOT = FirebaseDatabase
+        .getInstance("https://androidmessenger-ddaca-default-rtdb.asia-southeast1.firebasedatabase.app/")
+        .reference
 }

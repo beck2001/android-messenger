@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/horizontal_margin"
             android:layout_marginTop="@dimen/vertical_margin"
-            android:text="@string/settings_default_username"
+            tools:text="@string/settings_default_username"
             android:textColor="@color/white"
             android:textSize="@dimen/normal_text"
             app:layout_constraintEnd_toEndOf="parent"
@@ -39,10 +39,11 @@
             app:layout_constraintTop_toTopOf="@+id/settings_user_photo" />
 
         <TextView
+            android:id="@+id/settings_user_status"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/horizontal_margin"
-            android:text="@string/settings_default_user_status"
+            tools:text="@string/settings_default_user_status"
             android:textColor="@color/white"
             android:textSize="@dimen/small_text"
             app:layout_constraintEnd_toEndOf="parent"
@@ -75,7 +76,7 @@
         <TextView
             android:id="@+id/settings_user_phone_number"
             style="@style/normalText"
-            android:text="@string/settings_default_phone_number"
+            tools:text="@string/settings_default_phone_number"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -104,7 +105,7 @@
         <TextView
             android:id="@+id/settings_username"
             style="@style/normalText"
-            android:text="@string/settings_default_user_login"
+            tools:text="@string/settings_default_user_login"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -133,7 +134,7 @@
         <TextView
             android:id="@+id/settings_user_bio"
             style="@style/normalText"
-            android:text="@string/settings_default_bio"
+            tools:text="@string/settings_default_bio"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

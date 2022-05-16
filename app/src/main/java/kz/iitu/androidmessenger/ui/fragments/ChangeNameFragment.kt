@@ -3,13 +3,12 @@ package kz.iitu.androidmessenger.ui.fragments
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
-import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_change_name.*
 import kz.iitu.androidmessenger.MainActivity
 import kz.iitu.androidmessenger.R
 import kz.iitu.androidmessenger.utils.*
 
-class ChangeNameFragment : Fragment(R.layout.fragment_change_name) {
+class ChangeNameFragment : BaseFragment(R.layout.fragment_change_name) {
 
     override fun onResume() {
         super.onResume()

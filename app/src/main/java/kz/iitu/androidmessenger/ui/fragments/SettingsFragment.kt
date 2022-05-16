@@ -8,6 +8,7 @@ import kz.iitu.androidmessenger.R
 import kz.iitu.androidmessenger.activity.RegisterActivity
 import kz.iitu.androidmessenger.utils.AUTH
 import kz.iitu.androidmessenger.utils.replaceActivity
+import kz.iitu.androidmessenger.utils.replaceFragment
 
 class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
 
@@ -25,6 +26,9 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
             R.id.settings_menu_exit -> {
                 AUTH.signOut()
                 (activity as MainActivity).replaceActivity(RegisterActivity())
+            }
+            R.id.settings_menu_change_name -> {
+                replaceFragment(ChangeNameFragment())
             }
         }
         return true

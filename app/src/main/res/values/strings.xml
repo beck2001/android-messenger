@@ -20,4 +20,8 @@
     <string name="register_your_phone_number">Your phone number</string>
     <string name="register_toast_enter_phone">Please enter your phone number</string>
     <string name="register_phone_hint">--------------------</string>
+    <string name="settings_change_name_first_name">First Name</string>
+    <string name="settings_change_name_last_name">Last Name</string>
+    <string name="settings_change_name_first_name_is_empty">First Name shouldn\'t be empty</string>
+    <string name="settings_change_name_data_updated">User credentials updated</string>
 </resources>

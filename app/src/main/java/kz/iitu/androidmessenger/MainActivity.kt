@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
         initFields()
         initFunc()
+        AppStatus.updateStatus(AppStatus.ONLINE)
     }
 
     private fun initFunc() {
@@ -55,5 +56,10 @@ class MainActivity : AppCompatActivity() {
             .addListenerForSingleValueEvent(AppValueEventListener {
                 USER = it.getValue(User::class.java) ?: User()
             })
+    }
+
+    override fun onStop() {
+        super.onStop()
+        AppStatus.updateStatus(AppStatus.OFFLINE)
     }
 }

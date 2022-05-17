@@ -1,18 +1,17 @@
 package kz.iitu.androidmessenger.ui.fragments
 
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
 import kotlinx.android.synthetic.main.fragment_change_name.*
-import kz.iitu.androidmessenger.MainActivity
 import kz.iitu.androidmessenger.R
 import kz.iitu.androidmessenger.utils.*
 
-class ChangeNameFragment : BaseFragment(R.layout.fragment_change_name) {
+class ChangeNameFragment : BaseChangeFragment(R.layout.fragment_change_name) {
 
     override fun onResume() {
         super.onResume()
-        setHasOptionsMenu(true)
+        initFullNameList()
+    }
+
+    private fun initFullNameList() {
         val fullNameParts = USER.fullName.split(" ")
         if (fullNameParts.size == 2) {
             settings_input_first_name.setText(USER.fullName.split(" ")[0])
@@ -22,20 +21,7 @@ class ChangeNameFragment : BaseFragment(R.layout.fragment_change_name) {
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        (activity as MainActivity).menuInflater.inflate(R.menu.settings_menu_confirm, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.settings_confirm_change -> {
-                changeName()
-            }
-        }
-        return true
-    }
-
-    private fun changeName() {
+    override fun change() {
         val firstName = settings_input_first_name.text.toString()
         val lastName = settings_input_last_name.text.toString()
         if (firstName.isEmpty()) {

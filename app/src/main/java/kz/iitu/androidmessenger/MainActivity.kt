@@ -1,8 +1,11 @@
 package kz.iitu.androidmessenger
 
+import android.content.pm.PackageManager
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -23,13 +26,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        APP_ACTIVITY = this
     }
 
     override fun onStart() {
         super.onStart()
         initFields()
         initFunc()
+        initContacts()
         AppStatus.updateStatus(AppStatus.ONLINE)
+    }
+
+    private fun initContacts() {
+        if (checkPermissions(READ_CONTACTS)) {
+            Toast.makeText(APP_ACTIVITY, "reading contacts", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun initFunc() {
@@ -61,5 +72,16 @@ class MainActivity : AppCompatActivity() {
     override fun onStop() {
         super.onStop()
         AppStatus.updateStatus(AppStatus.OFFLINE)
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (ContextCompat.checkSelfPermission(APP_ACTIVITY, READ_CONTACTS) == PackageManager.PERMISSION_GRANTED) {
+            initContacts()
+        }
     }
 }

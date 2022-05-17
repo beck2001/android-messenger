@@ -24,4 +24,7 @@
     <string name="settings_change_name_last_name">Last Name</string>
     <string name="settings_change_name_first_name_is_empty">First Name shouldn\'t be empty</string>
     <string name="settings_change_name_data_updated">User credentials updated</string>
+    <string name="settings_change_username_input_username">Username</string>
+    <string name="settings_change_username_is_empty">Username shouldn\'t be empty</string>
+    <string name="settings_change_username_exists">User with this username already exists</string>
 </resources>
